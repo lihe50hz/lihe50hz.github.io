@@ -137,6 +137,7 @@ ul.main-menu li a.active {
   display:block;
 }
 
+/* Customs */
 canvas {
     display: block;
     width: 100%;

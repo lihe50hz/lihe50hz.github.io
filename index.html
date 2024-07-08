@@ -3,9 +3,9 @@
   <head>
     <!-- Page setup -->
     <meta charset="utf-8">
-    <title>Your title here</title>
-    <meta name="description" content="A brief description of your site for search engines">
-    <meta name="author" content="Information about the author here">
+    <title>He Li</title>
+    <meta name="description" content="Homepage for He Li">
+    <meta name="author" content="He Li, template adapted from https://github.com/zirafa/simple-website-template">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
     <link rel="icon" type="image/png" href="favicon.png">
   
@@ -23,12 +23,25 @@
     <!-- Want to add Bootstrap? -->
     <!-- Visit: https://getbootstrap.com/docs/4.3/getting-started/introduction/ -->
     
+
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        canvas {
+            display: block;
+        }
+    </style>
   </head>
   
   <body>
     <canvas id="canvas"></canvas>
     <header id="header">
-      <img src="lihe.jpg">
+      <img src="lihe.jpg" style="width:300px; height:200px;">
       <h1>He Li （李赫）</h1>
       
       <!-- Menu link fragment #id should match a div id. Example: <a href="#home"> links to <div id="home"></div>  -->
@@ -172,7 +185,6 @@
             current_circle.x = null;
             current_circle.y = null;
         };
-
     </script>
   </body>
 </html>
