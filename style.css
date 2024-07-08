@@ -148,9 +148,8 @@ ul.main-menu li a.active {
 }
 
 .paper-figure {
-    width: 150px;
-    height: auto;
-    margin-right: 20px;
+    width: auto;
+    height: 120px;
 }
 
 .paper-info {
