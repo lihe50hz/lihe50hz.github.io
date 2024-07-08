@@ -137,3 +137,39 @@ ul.main-menu li a.active {
   display:block;
 }
 
+.content-region {
+    margin: 20px;
+}
+
+.paper {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.paper-figure {
+    width: 150px;
+    height: auto;
+    margin-right: 20px;
+}
+
+.paper-info {
+    max-width: 800px;
+}
+
+.paper-info h3 {
+    margin: 0 0 10px;
+}
+
+.paper-info p {
+    margin: 5px 0;
+}
+
+.paper-info a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.paper-info a:hover {
+    text-decoration: underline;
+}
