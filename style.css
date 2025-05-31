@@ -11,7 +11,12 @@ body {
   line-height: 1.6;
   font-weight: 400;
   font-family: "Roboto", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #FFFFFF;
+  color: #333;
+  background: #f5f5f5;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  filter: none;
 }
 
 /**
@@ -93,17 +98,43 @@ blockquote p:last-child {
 /* Full size background image */
 html, #container, .inner { background-color:transparent;}
 html {
-  background:url(background_hkrail.png) center center no-repeat fixed;
-  background-size:cover;
+  position: relative;
+}
+html::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  z-index: -1;
 }
 body {
-  max-width:800px;
-  margin:25px auto;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  filter: none;
 }
-header, #content, footer { 
-  background: rgba(0,0,0,.8); 
-  padding:25px;
-  color:#FFFFFF; 
+header {
+  background: #fff;
+  padding: 40px;
+  margin-bottom: 30px;
+  border-radius: 12px;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+header img {
+  border-radius: 50%;
+  border: 4px solid #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+header h1 {
+  color: #2c3e50;
+  margin-bottom: 20px;
 }
 
 /* Menu Links */
@@ -112,107 +143,405 @@ ul.main-menu {
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  justify-content: left;
+  justify-content: center;
   list-style: none;
+  gap: 20px;
 }
+
 ul.main-menu li a {
-  margin-right:20px;
-  font-size:2.0rem;
-  border-bottom: solid transparent 3px;
-  color:#cfd2da;
+  font-size: 1.8rem;
+  padding: 8px 16px;
+  border-radius: 6px;
+  color: #666;
+  transition: all 0.3s ease;
 }
+
 ul.main-menu li a:hover {
-  color:#FFFFFF;
+  color: #EF6D3D;
+  background: #f8f9fa;
 }
+
 ul.main-menu li a.active {
-  color:#FFFFFF;
-  border-bottom-color:#EF6D3D;
+  color: #EF6D3D;
+  background: #f8f9fa;
+}
+
+#content {
+  background: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+}
+
+.content-region {
+  margin: 30px 0;
+  padding: 20px;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.content-region h2 {
+  color: #2c3e50;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 10px;
+  margin-bottom: 25px;
+}
+
+/* About Section */
+#ABOUT {
+  background: #f8f9fa;
+  padding: 30px;
+  border-radius: 12px;
+}
+
+#ABOUT p {
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+/* Publications Section */
+.publications-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.paper {
+  display: flex;
+  margin-bottom: 40px;
+  padding: 25px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.paper:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.paper-image {
+  flex: 0 0 250px;
+  margin-right: 30px;
+}
+
+.paper-figure {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.paper-info {
+  flex: 1;
+}
+
+.paper-info h3 {
+  margin: 0 0 15px 0;
+  color: #2c3e50;
+  font-size: 1.6em;
+  line-height: 1.4;
+}
+
+.paper-info .authors {
+  margin: 15px 0;
+  color: #555;
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+.paper-info .links {
+  margin: 15px 0;
+}
+
+.paper-link {
+  color: #EF6D3D;
+  text-decoration: none;
+  margin-right: 0px;
+  font-weight: 500;
+  padding: 5px 10px;
+  border-radius: 4px;
+  background: #fff;
+  transition: all 0.2s ease;
+}
+
+.paper-link:hover {
+  background: #EF6D3D;
+  color: #fff;
+}
+
+/* Blog Section */
+#BLOG {
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 12px;
+  }
+
+#BLOG ul {
+  list-style: none;
+  padding: 0;
+}
+
+#BLOG li {
+  margin-bottom: 20px;
+  padding: 15px;
+  background: #fff;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+#BLOG li:hover {
+  background: #f0f0f0;
+}
+
+#BLOG a {
+  color: #EF6D3D;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+#BLOG a:hover {
+  text-decoration: underline;
+}
+
+/* Contact Section */
+#CONTACT {
+  background: #f8f9fa;
+  padding: 30px;
+  border-radius: 12px;
+}
+
+#CONTACT ul {
+  list-style: none;
+  padding: 0;
+}
+
+#CONTACT li {
+  margin-bottom: 15px;
+  padding: 10px;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+#CONTACT li:hover {
+  background: #f0f0f0;
+}
+
+#CONTACT a {
+  color: #EF6D3D;
+  text-decoration: none;
+}
+
+#CONTACT a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 30px;
+  color: #666;
+  font-size: 1.4rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+  
+  header {
+    padding: 20px;
+  }
+  
+  #content {
+    padding: 20px;
+  }
+  
+  .paper {
+    flex-direction: column;
+    padding: 20px;
+  }
+  
+  .paper-image {
+    flex: 0 0 auto;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+  
+  .paper-figure {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  
+  ul.main-menu {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  ul.main-menu li a {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
 }
 
 /* Utility classes */
 .hide {
-  display:none;
+  display: none;
 }
+
 .show {
-  display:block;
+  display: block;
 }
 
-.content-region {
-    margin: 20px;
+/* Internship Section */
+.internship-container {
+    max-width: 1000px;
+    margin: 0 auto 40px;
 }
 
-.paper {
-    display: flex;
-    margin-bottom: 40px;
-    padding: 20px;
+.internship {
     background: #f8f9fa;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    transition: transform 0.2s ease;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    margin-bottom: 30px;
+    position: relative;
 }
 
-.paper:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+.internship:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
 }
 
-.paper-image {
-    flex: 0 0 200px;
-    margin-right: 25px;
+.mit-internship-logo {
+    position: absolute;
+    right: -10px;
+    bottom: -190px;
+    z-index: 1;
+    pointer-events: none;
 }
 
-.paper-figure {
-    width: 100%;
-    height: auto;
-    border-radius: 4px;
-    object-fit: cover;
+.mit-logo {
+    width: 400px;
+    max-width: 50vw;
+    opacity: 0.15;
+    filter: grayscale(30%);
+    display: block;
 }
 
-.paper-info {
+.thu-internship-logo {
+    position: absolute;
+    right: -10px;
+    bottom: -100px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.thu-logo {
+    right: 0px;
+    bottom: 0px;
+    width: 300px;
+    max-width: 50vw;
+    opacity: 0.15;
+    filter: grayscale(30%);
+    display: block;
+}
+
+.internship-info {
+    position: relative;
+    z-index: 2;
+}
+
+.internship-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eee;
+}
+
+.internship-header h3 {
+    color: #2c3e50;
+    font-size: 1.8em;
+    margin: 0;
+    padding: 0;
+    border: none;
     flex: 1;
 }
 
-.paper-info h3 {
-    margin: 0 0 15px 0;
-    color: #2c3e50;
-    font-size: 1.4em;
+.header-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
 }
 
-.paper-info .authors {
-    margin: 10px 0;
-    color: #555;
-    font-size: 1.1em;
-}
-
-.paper-info .links {
-    margin: 10px 0;
-}
-
-.paper-link {
-    color: #3498db;
-    text-decoration: none;
-    margin-right: 10px;
+.internship-header .period {
+    color: #666;
+    font-size: 1.2em;
     font-weight: 500;
+    white-space: nowrap;
 }
 
-.paper-link:hover {
-    text-decoration: underline;
-    color: #2980b9;
+.school-icon {
+    color: #EF6D3D;
+    font-size: 1.4em;
+    margin-top: 4px;
+}
+
+.internship-details {
+    margin: 20px 0;
+    line-height: 1.0;
+}
+
+.internship-details span {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.internship-details strong {
+    color: #2c3e50;
+    margin-right: 8px;
+}
+
+.internship .description {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+    color: #555;
+    line-height: 1.6;
 }
 
 @media (max-width: 768px) {
-    .paper {
+    .internship {
+        padding: 20px;
+    }
+    
+    .internship-header {
         flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
     }
     
-    .paper-image {
-        flex: 0 0 auto;
-        margin-right: 0;
-        margin-bottom: 20px;
+    .header-right {
+        align-items: flex-start;
+        margin-top: 5px;
     }
     
-    .paper-figure {
-        max-width: 300px;
-        margin: 0 auto;
+    .internship-header h3 {
+        font-size: 1.6em;
+    }
+    
+    .internship-header .period {
+        margin-left: 0;
     }
 }

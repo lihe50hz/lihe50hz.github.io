@@ -13,6 +13,7 @@
     <!-- Reset default styles and add support for google fonts -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet" type="text/css" />
     <link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" type="text/css" />
    
     <!-- Custom styles -->
     <link href="style.css" rel="stylesheet" type="text/css" />
@@ -26,15 +27,15 @@
   <body>
     
     <header id="header">
-      <img src="lihe.jpg" style="width: 200px; height:200px;">
+      <img src="main/lihe.jpg" style="width: 200px; height:200px;">
       <h1>He Li （李赫）</h1>
       
       <!-- Menu link fragment #id should match a div id. Example: <a href="#home"> links to <div id="home"></div>  -->
       <ul class="main-menu">
-        <li><a href="#ABOUT">about</a></li>
-        <li><a href="#RESEARCH">research</a></li>
-        <li><a href="#BLOG">blog</a></li>
-        <li><a href="#CONTACT">contact</a></li>
+        <li><a href="#ABOUT">About</a></li>
+        <li><a href="#RESEARCH">Research</a></li>
+        <li><a href="#BLOG">Blog</a></li>
+        <li><a href="#CONTACT">Contact</a></li>
       </ul>                 
     </header>
    
@@ -48,24 +49,58 @@
               Hello! My name is He Li. I'm a junior undergraduate at Tsinghua University. Currently, I'm an AI-track student in Yao Class. 
             </p>
             <p>
-              My research interests lie in visual generative model and computer vision. And I'm still in the process of exploring the field of artificial intelligence, so the research interests are only temporary ones.
+              My research interests lie in visual generative model and computer vision. I have participated in several reseach projects and I'm really into the process of doing AI researches. I plan to apply for CS PhD on 2026 Fall.
             </p>
-            <p>
-              I have already participate in several reseach projects and I'm really into the process of doing AI researches. I plan to apply for CS PhD (in the field of AI) on 2026 Fall.
-            </p>
-            
             <!--My CV-->
             <p>
-              If you want to learn more about me, please check my <a href="cv.pdf">CV</a> and my <a href="https://scholar.google.com/citations?user=oxO7a1IAAAAJ&hl=en">Google Scholar</a>.
+              If you want to learn more about me, please check my <a href="cv.pdf">CV</a>.
             </p>
           </div>
           
           <div id="RESEARCH" class="content-region">
+            <h2>Experiences</h2>
+            <div class="internship-container">
+                <div class="internship">
+                    <div class="internship-info">
+                        <div class="internship-header">
+                            <h3>Research Assistant at MIT</h3>
+                            <div class="header-right">
+                                <span class="period">Jan 2024 - Jun 2025</span>
+                            </div>
+                        </div>
+                        <p class="internship-details">
+                            <span class="topic"><strong>Topic:</strong> Autoregressive Vision Model, Representation, Diffusion and Flow Matching</span><br>
+                            <span class="mentors"><strong>Mentors:</strong> Dr. <a href="https://www.tianhongli.me/" target="_blank">Tianhong Li</a>, Prof. <a href="https://people.csail.mit.edu/kaiming/" target="_blank">Kaiming He</a></span>
+                        </p>
+                        <div class="mit-internship-logo">
+                            <img src="schools/MIT.png" alt="MIT Logo" class="mit-logo">
+                        </div>
+                    </div>
+                </div>
+                <div class="internship">
+                    <div class="internship-info">
+                        <div class="internship-header">
+                            <h3>Undergraduate Intern at TSAIL</h3>
+                            <div class="header-right">
+                                <span class="period">Oct 2023 - May 2024</span>
+                            </div>
+                        </div>
+                        <p class="internship-details">
+                            <span class="topic"><strong>Topic:</strong> Sparsity for Diffusion Models, Efficient Machine Learning System</span><br>
+                            <span class="mentors"><strong>Mentors:</strong> Dr. <a href="https://scholar.google.com/citations?user=_cF9-CkAAAAJ&hl=en&oi=ao" target="_blank">Kafeng Wang</a>, Prof. <a href="https://ml.cs.tsinghua.edu.cn/~jianfei/" target="_blank">Jianfei Chen</a>, Prof. <a href="https://ml.cs.tsinghua.edu.cn/~jun/index.shtml" target="_blank">Jun Zhu</a></span>
+                        </p>
+                        <div class="thu-internship-logo">
+                            <img src="schools/THU.jpg" alt="THU Logo" class="thu-logo">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
             <h2>Publications</h2>
             <div class="publications-container">
                 <div class="paper">
                     <div class="paper-image">
-                        <img src="gar.png" alt="gar" class="paper-figure">
+                        <img src="papers/gar.png" alt="gar" class="paper-figure">
                     </div>
                     <div class="paper-info">
                         <h3>Autoregressive Image Generation without Vector Quantization</h3>
@@ -78,7 +113,7 @@
                 </div>
                 <div class="paper">
                     <div class="paper-image">
-                        <img src="sparsedm.png" alt="sparsedm" class="paper-figure">
+                        <img src="papers/sparsedm.png" alt="sparsedm" class="paper-figure">
                     </div>
                     <div class="paper-info">
                         <h3>SparseDM: Toward Sparse Efficient Diffusion Models</h3>
@@ -96,32 +131,29 @@
             <ul>
                 <li>About State Space Model: <a href="https://zhuanlan.zhihu.com/p/701121020">Mamba and RWKV</a> (Written in Chinese)</li>
             </ul>
-            <h2>Experience and Reflection</h2>
+            <h2 style="margin-top: 40px;">Experience and Reflection</h2>
             <ul>
                 <li>TBD</li>
             </ul>
           </div>
 
           <div id="CONTACT" class="content-region">
-            <p>
-                I am open to any kinds of discussion. Feel free to contact me!
-            </p>
             <h2>Approaches</h2>
             <ul>
-                <li>Cell Phone: (+86) 133-7036-2727</li>
-                <li>Email: <a href="mailto:lihe22@mails.tsinghua.edu.cn">lihe22@mails.tsinghua.edu.cn</a></li>
-                <li>Email: <a href="lihe50hz@gmail.com">lihe50hz@gmail.com</a> (Recommended)</li>
+                <li>Cell Phone: (+86) 133-7036-2727, (+1) 617-251-2692</li>
+                <li>School Email: <a href="mailto:lihe22@mails.tsinghua.edu.cn">lihe22@mails.tsinghua.edu.cn</a>, <a href="mailto:lihe50hz@mit.edu">lihe50hz@mit.edu</a>, <a href="mailto:lihe50hz@stanford.edu">lihe50hz@stanford.edu</a></li>
+                <li>Personal Email: <a href="lihe50hz@gmail.com">lihe50hz@gmail.com</a> (Recommended)</li>
             </ul>
-            <h2>Address</h2>
-            <p>
-                Zijing Building 2# Room 415A
-                Tsinghua University
-                Beijing 100084
-                P.R CHINA
-            </p>
+            <h2 style="margin-top: 40px;">Address</h2>
+            <ul>
+                <li>
+                    Zijing Building 2# Room 415A <br>
+                    Tsinghua University <br>
+                    Beijing 100084 <br>
+                    P.R CHINA
+                </li>
+            </ul>
           </div>
-        
-          
         </div>
       </div>
     </div>
