@@ -1,0 +1,167 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>He Li - Blog</title>
+    <meta name="description" content="Blog posts by He Li">
+    <meta name="author" content="He Li">
+    <link rel="icon" type="image/png" href="favicon.png">
+    
+    <!-- Stylesheets -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet" type="text/css" />
+    <link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" type="text/css" />
+    
+    <!-- Custom styles -->
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    
+    <!-- Markdown parser -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    
+    <style>
+        .blog-viewer {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .blog-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        .blog-content {
+            background: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            line-height: 1.8;
+        }
+        
+        .blog-content h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #EF6D3D;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .blog-content h2 {
+            color: #2c3e50;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        
+        .blog-content h3 {
+            color: #555;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        
+        .blog-content p {
+            color: #555;
+            margin-bottom: 20px;
+        }
+        
+        .blog-content ul, .blog-content ol {
+            color: #555;
+            margin-bottom: 20px;
+            padding-left: 30px;
+        }
+        
+        .blog-content li {
+            margin-bottom: 8px;
+        }
+        
+        .blog-content strong {
+            color: #2c3e50;
+        }
+        
+        .blog-content em {
+            color: #EF6D3D;
+            font-style: italic;
+        }
+        
+        .blog-content hr {
+            border: none;
+            border-top: 2px solid #f0f0f0;
+            margin: 40px 0;
+        }
+        
+        .back-button {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background: #EF6D3D;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+        
+        .back-button:hover {
+            background: #D2541D;
+            transform: translateY(-2px);
+        }
+        
+        .loading {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            padding: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="blog-viewer">
+        <div class="blog-header">
+            <a href="index.html#BLOG" class="back-button">
+                <i class="fas fa-arrow-left"></i> Back to Homepage
+            </a>
+            <h1>He writes blogs</h1>
+        </div>
+        
+        <div class="blog-content" id="blog-content">
+            <div class="loading">Loading blog content...</div>
+        </div>
+    </div>
+
+    <script>
+        // Get blog file from URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const blogFile = urlParams.get('post') || 'reflection';
+        
+        // Load and render markdown
+        async function loadBlog() {
+            try {
+                const response = await fetch(`blog/${blogFile}.md`);
+                if (!response.ok) {
+                    throw new Error('Blog post not found');
+                }
+                
+                const markdown = await response.text();
+                const html = marked.parse(markdown);
+                
+                document.getElementById('blog-content').innerHTML = html;
+                
+                // Update page title
+                const firstH1 = document.querySelector('#blog-content h1');
+                if (firstH1) {
+                    document.title = `He Li - ${firstH1.textContent}`;
+                }
+                
+            } catch (error) {
+                document.getElementById('blog-content').innerHTML = `
+                    <h1>Blog Post Not Found</h1>
+                    <p>Sorry, the requested blog post could not be loaded.</p>
+                `;
+            }
+        }
+        
+        // Load blog when page loads
+        document.addEventListener('DOMContentLoaded', loadBlog);
+    </script>
+</body>
+</html> 

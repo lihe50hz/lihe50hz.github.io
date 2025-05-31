@@ -18,12 +18,119 @@
     
     // Highlight the menu link associated with this region by adding the .active CSS class
     $('.main-menu a[href="'+ region +'"]').addClass('active'); 
-
-    // Alternate method: Use AJAX to load the contents of an external file into a div based on URL fragment
-    // This will extract the region name from URL hash, and then load [region].html into the main #content div
-    // var region = location.hash.toString() || '#first';
-    // $('#content').load(region.slice(1) + '.html')
     
   });
   
 })(jQuery);
+
+$(document).ready(function() {
+  
+  // Initialize - show the first content region by default if no hash
+  if (!location.hash) {
+    $('.content-region').hide();
+    $('#ABOUT').show();
+    $(".main-menu a").first().addClass("active");
+  }
+  
+  // Copy to clipboard functionality
+  $('.copyable-address').on('click', function() {
+    const textToCopy = $(this).data('copy-text');
+    
+    // Use the modern Clipboard API if available
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(textToCopy).then(function() {
+        showCopyPopup('Address copied to clipboard!');
+      }).catch(function(err) {
+        console.error('Failed to copy: ', err);
+        fallbackCopyTextToClipboard(textToCopy);
+      });
+    } else {
+      // Fallback for older browsers
+      fallbackCopyTextToClipboard(textToCopy);
+    }
+  });
+  
+  // Copy to clipboard functionality for contact items
+  $('.copyable-contact').on('click', function(e) {
+    // Prevent default action if clicking on email links
+    if (e.target.tagName === 'A') {
+      return; // Allow email links to work normally
+    }
+    
+    const textToCopy = $(this).data('copy-text');
+    const contactType = $(this).text().includes('Phone') ? 'Phone number' : 'Email';
+    
+    // Use the modern Clipboard API if available
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(textToCopy).then(function() {
+        showCopyPopup(`${contactType} copied to clipboard!`);
+      }).catch(function(err) {
+        console.error('Failed to copy: ', err);
+        fallbackCopyTextToClipboard(textToCopy, contactType);
+      });
+    } else {
+      // Fallback for older browsers
+      fallbackCopyTextToClipboard(textToCopy, contactType);
+    }
+  });
+  
+  // Fallback copy function for older browsers
+  function fallbackCopyTextToClipboard(text, type = 'address') {
+    const textArea = document.createElement("textarea");
+    textArea.value = text;
+    textArea.style.top = "0";
+    textArea.style.left = "0";
+    textArea.style.position = "fixed";
+    textArea.style.opacity = "0";
+    
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    
+    try {
+      const successful = document.execCommand('copy');
+      if (successful) {
+        showCopyPopup(`${type} copied to clipboard!`);
+      } else {
+        showCopyPopup(`Failed to copy ${type}`, 'error');
+      }
+    } catch (err) {
+      console.error('Fallback: Oops, unable to copy', err);
+      showCopyPopup(`Failed to copy ${type}`, 'error');
+    }
+    
+    document.body.removeChild(textArea);
+  }
+  
+  // Show copy success/error popup
+  function showCopyPopup(message, type = 'success') {
+    // Remove any existing popup
+    $('.copy-popup').remove();
+    
+    // Create popup element
+    const popup = $('<div class="copy-popup"></div>');
+    popup.text(message);
+    
+    if (type === 'error') {
+      popup.css('background', '#f44336');
+      popup.html('✗ ' + message);
+    }
+    
+    // Add to body and show
+    $('body').append(popup);
+    
+    // Trigger animation
+    setTimeout(() => {
+      popup.addClass('show');
+    }, 10);
+    
+    // Hide and remove after 3 seconds
+    setTimeout(() => {
+      popup.removeClass('show');
+      setTimeout(() => {
+        popup.remove();
+      }, 300);
+    }, 3000);
+  }
+  
+});

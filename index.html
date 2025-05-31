@@ -30,7 +30,6 @@
       <img src="main/lihe.jpg" style="width: 200px; height:200px;">
       <h1>He Li （李赫）</h1>
       
-      <!-- Menu link fragment #id should match a div id. Example: <a href="#home"> links to <div id="home"></div>  -->
       <ul class="main-menu">
         <li><a href="#ABOUT">About</a></li>
         <li><a href="#RESEARCH">Research</a></li>
@@ -43,18 +42,30 @@
       <div class="inner">
         <div id="content"> 
           
-          <div id="ABOUT" class="content-region hide">
+          <div id="ABOUT" class="content-region">
             <h2>About Me</h2>
             <p>
-              Hello! My name is He Li. I'm a junior undergraduate at Tsinghua University. Currently, I'm an AI-track student in Yao Class. 
+              Hello! My name is He Li. I'm a junior undergraduate at Tsinghua University. Currently, I'm an AI-track student in Yao Class, IIIS. 
             </p>
             <p>
-              My research interests lie in visual generative model and computer vision. I have participated in several reseach projects and I'm really into the process of doing AI researches. I plan to apply for CS PhD on 2026 Fall.
+              My research interests lie in visual generative model and computer vision. I have participated in several reseach projects and I'm really into the process of doing AI researches. I am going to apply for CS PhD on 2026 Fall.
             </p>
             <!--My CV-->
             <p>
               If you want to learn more about me, please check my <a href="cv.pdf">CV</a>.
             </p>
+
+            <h2 style="margin-top: 40px;">News</h2>
+            <ul class="news-list">
+                <li>
+                    <span class="news-date-text">[May 2025]</span>
+                    I'm going to be an UGVRI student in Serena's Group at Stanford from June 2025 to September 2025.
+                </li>
+                <li>
+                    <span class="news-date-text">[Jan 2025]</span>
+                    I'm going to be a research intern in Kaiming's Group at MIT from February 2025 to May 2025.
+                </li>
+            </ul>
           </div>
           
           <div id="RESEARCH" class="content-region">
@@ -106,9 +117,12 @@
                         <h3>Autoregressive Image Generation without Vector Quantization</h3>
                         <p class="authors"><strong>Authors:</strong> Tianhong Li, Yonglong Tian, <strong>He Li</strong>, Mingyang Deng and Kaiming He</p>
                         <p class="links"><strong>Links:</strong> 
-                            <a href="https://arxiv.org/abs/2406.11838" class="paper-link">arXiv</a> | 
-                            <a href="https://github.com/LTH14/mar" class="paper-link">GitHub</a>
+                            <a href="https://arxiv.org/abs/2406.11838" class="paper-link">Paper</a> | 
+                            <a href="https://github.com/LTH14/mar" class="paper-link">Code</a> |
+                            <a href="https://colab.research.google.com/github/LTH14/mar/blob/main/demo/run_mar.ipynb" class="paper-link">Demo</a> |
+                            <a href="https://huggingface.co/jadechoghari/mar" class="paper-link">Huggingface</a>
                         </p>
+                        <p class="links"><strong>Venue:</strong> Neural Information Processing Systems (NeurIPS) 2025, <strong>Spotlight (Top 2%)</strong></p>
                     </div>
                 </div>
                 <div class="paper">
@@ -119,8 +133,9 @@
                         <h3>SparseDM: Toward Sparse Efficient Diffusion Models</h3>
                         <p class="authors"><strong>Authors:</strong> Kafeng Wang, Jianfei Chen, <strong>He Li</strong>, Zhenpeng Mi and Jun Zhu</p>
                         <p class="links"><strong>Links:</strong> 
-                            <a href="https://arxiv.org/abs/2404.10445" class="paper-link">arXiv</a>
+                            <a href="https://arxiv.org/abs/2404.10445" class="paper-link">Paper</a>
                         </p>
+                        <p class="links"><strong>Venue:</strong> IEEE International Conference on Multimedia & Expo (ICME) 2025</p>
                     </div>
                 </div>
             </div>
@@ -128,29 +143,79 @@
           
           <div id="BLOG" class="content-region">
             <h2>Knowledge and Comprehension</h2>
-            <ul>
-                <li>About State Space Model: <a href="https://zhuanlan.zhihu.com/p/701121020">Mamba and RWKV</a> (Written in Chinese)</li>
-            </ul>
+            <div class="blog-container">
+                <div class="blog-card">
+                    <div class="blog-info">
+                        <div class="blog-header">
+                            <h3>About State Space Model: Mamba and RWKV</h3>
+                            <div class="header-right">
+                                <span class="blog-type">Reading Notes</span>
+                                <span class="blog-language">Chinese</span>
+                            </div>
+                        </div>
+                        <p class="blog-details">
+                            <span class="description"><strong>Description:</strong> A comprehensive analysis of state space models, focusing on Mamba and RWKV architectures together with their advantages and disadvantages. Started from the concepts of state space models, and then introduced the key components of the original papers.</span>
+                        </p>
+                        <p class="blog-links">
+                            <a href="https://zhuanlan.zhihu.com/p/701121020" class="blog-link" target="_blank">Read Article in Zhihu</a>
+                        </p>
+                    </div>
+                    <div class="blog-meta">
+                        <span class="read-time">~20 min read</span>
+                        <span class="word-count">7,100 characters</span>
+                    </div>
+                </div>
+            </div>
+            
             <h2 style="margin-top: 40px;">Experience and Reflection</h2>
-            <ul>
-                <li>TBD</li>
-            </ul>
+            <div class="blog-container">
+                <div class="blog-card">
+                    <div class="blog-info">
+                        <div class="blog-header">
+                            <h3>Coming Soon</h3>
+                            <div class="header-right">
+                                <span class="blog-type">Personal Reflection</span>
+                            </div>
+                        </div>
+                        <p class="blog-details">
+                            <span class="description"><strong>Description:</strong> Personal reflections on research experiences, academic journey, and insights gained from working in AI research.</span>
+                        </p>
+                        <p class="blog-links">
+                            <a href="blog-viewer.html?post=reflection" class="blog-link" target="_blank">Read Article</a>
+                        </p>
+                    </div>
+                    <div class="blog-meta">
+                        <span class="read-time">TBD</span>
+                        <span class="word-count">TBD</span>
+                    </div>
+                </div>
+            </div>
           </div>
 
           <div id="CONTACT" class="content-region">
             <h2>Approaches</h2>
             <ul>
-                <li>Cell Phone: (+86) 133-7036-2727, (+1) 617-251-2692</li>
-                <li>School Email: <a href="mailto:lihe22@mails.tsinghua.edu.cn">lihe22@mails.tsinghua.edu.cn</a>, <a href="mailto:lihe50hz@mit.edu">lihe50hz@mit.edu</a>, <a href="mailto:lihe50hz@stanford.edu">lihe50hz@stanford.edu</a></li>
-                <li>Personal Email: <a href="lihe50hz@gmail.com">lihe50hz@gmail.com</a> (Recommended)</li>
+                <li class="copyable-contact" data-copy-text="(+86) 133-7036-2727">
+                    Cell Phone: (+86) 133-7036-2727
+                    <span class="copy-hint">Click to copy</span>
+                </li>
+                <li class="copyable-contact" data-copy-text="lihe22@mails.tsinghua.edu.cn">
+                    School Email: <a href="mailto:lihe22@mails.tsinghua.edu.cn">lihe22@mails.tsinghua.edu.cn</a>
+                    <span class="copy-hint">Click to copy</span>
+                </li>
+                <li class="copyable-contact" data-copy-text="lihe50hz@gmail.com">
+                    Personal Email: <a href="lihe50hz@gmail.com">lihe50hz@gmail.com</a> (Recommended)
+                    <span class="copy-hint">Click to copy</span>
+                </li>
             </ul>
             <h2 style="margin-top: 40px;">Address</h2>
             <ul>
-                <li>
+                <li class="copyable-address" data-copy-text="Zijing Building 2# Room 415A, Tsinghua University, Beijing 100084, P.R CHINA">
                     Zijing Building 2# Room 415A <br>
                     Tsinghua University <br>
                     Beijing 100084 <br>
                     P.R CHINA
+                    <span class="copy-hint">Click to copy</span>
                 </li>
             </ul>
           </div>
