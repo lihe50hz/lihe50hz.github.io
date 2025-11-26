@@ -742,6 +742,22 @@ footer {
     display: block;
 }
 
+.stanford-internship-logo {
+    position: absolute;
+    right: -10px;
+    bottom: -60px;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.stanford-logo {
+    width: 220px;
+    max-width: 50vw;
+    opacity: 0.15;
+    filter: grayscale(30%);
+    display: block;
+}
+
 .internship-info {
     position: relative;
     z-index: 2;
